@@ -19,7 +19,8 @@ function scene:create( event )
 	self.sounds = require "scene.game.sounds"
 
 	-- or load a tiled map
-	local data = json.decodeFile("scene/game/map/table.json")
+  local filename = system.pathForFile("scene/game/map/table.json")
+  local data = json.decodeFile(filename)
 	map = ponytiled.new(data, "scene/game/map")
 	map:extend("label", "button")
 	view:insert(map)
